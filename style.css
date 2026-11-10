@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #121824;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* Navbar with Hover Effect */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 24, 36, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 4rem;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+/* Navbar Link Underline Animation */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #e53e3e;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.logout-btn {
+    background: #e53e3e !important;
+    color: white !important;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.logout-btn:hover {
+    background: #c53030 !important;
+    box-shadow: 0 0 15px rgba(229, 62, 62, 0.6);
+}
+
+/* Hero Section (Home) Effects */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8rem 8rem 4rem 8rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #e2e8f0;
+    line-height: 1.2;
+}
+
+.white-text {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.role-subtitle {
+    font-size: 1.6rem;
+    color: #e53e3e;
+    font-weight: 600;
+    margin: 1rem 0 2rem 0;
+}
+
+.btn-primary-hero {
+    display: inline-block;
+    background: #e53e3e;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-primary-hero:hover {
+    background: #c53030;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(229, 62, 62, 0.6);
+}
+
+/* Glowing Round Avatar with Pulse Animation */
+.glow-avatar {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e53e3e;
+    box-shadow: 0 0 35px rgba(229, 62, 62, 0.4);
+    
+}
+
+.glow-avatar-small {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e53e3e;
+    box-shadow: 0 0 25px rgba(229, 62, 62, 0.4);
+    transition: transform 0.5s ease;
+}
+
+.glow-avatar-small:hover {
+    transform: scale(1.03);
+}
+
+/* General Sections */
+.section {
+    padding: 5rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.accent-text {
+    color: #e53e3e;
+}
+
+/* About Section Card Effects */
+.about-card-main {
+    background: #1a2234;
+    border: 1px solid #2d3748;
+    border-radius: 16px;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-card-main:hover {
+    border-color: rgba(229, 62, 62, 0.4);
+    transform: translateY(-3px);
+}
+
+.sub-greeting {
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+.about-text-content h3 {
+    font-size: 2.2rem;
+    color: white;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.about-desc {
+    color: #94a3b8;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+/* Info Boxes Hover Effects */
+.info-boxes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.info-box {
+    background: #1a2234;
+    border: 1px solid #2d3748;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    border-color: #e53e3e;
+    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.15);
+}
+
+.icon-box {
+    background: rgba(229, 62, 62, 0.15);
+    color: #e53e3e;
+    font-size: 1.5rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.info-box:hover .icon-box {
+    background: #e53e3e;
+    color: white;
+}
+
+.info-details span {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.info-details h4 {
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 0.2rem;
+}
+
+/* Skills Grid Hover Effects */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: #1a2234;
+    border: 1px solid #2d3748;
+    padding: 1.8rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #e53e3e;
+    background: linear-gradient(135deg, #1a2234 0%, #252f4a 100%);
+    box-shadow: 0 10px 25px rgba(229, 62, 62, 0.25);
+    color: #ff6b6b;
+}
+
+/* Projects Grid Hover Effects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #1a2234;
+    border: 1px solid #2d3748;
+    border-top: 4px solid #e53e3e;
+    padding: 2.2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    border-color: #ff4d4d;
+}
+
+.project-card h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+    color: #ff6b6b;
+}
+
+.project-card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.badge-tags {
+    color: #e53e3e;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: rgba(229, 62, 62, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover .badge-tags {
+    background: rgba(229, 62, 62, 0.2);
+    color: #ff4d4d;
+}
+
+/* Contact Section & Form Effects */
+.contact-section {
+    padding: 6rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.contact-left, .contact-right {
+    flex: 1;
+}
+
+.contact-left h2, .contact-right h2 {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.contact-intro {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.contact-box-item {
+    background: #1a2234;
+    border: 1px solid #2d3748;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-box-item:hover {
+    transform: translateX(5px);
+    border-color: #e53e3e;
+    box-shadow: 0 5px 20px rgba(229, 62, 62, 0.15);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    background: rgba(229, 62, 62, 0.15);
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.contact-box-item:hover .contact-icon {
+    background: #e53e3e;
+}
+
+.contact-box-item h4 {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.contact-box-item p {
+    color: white;
+    font-weight: 600;
+}
+
+.contact-right form input, .contact-right form textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background: #1a2234;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-right form input:focus, .contact-right form textarea:focus {
+    outline: none;
+    border-color: #e53e3e;
+    box-shadow: 0 0 10px rgba(229, 62, 62, 0.3);
+}
+
+.btn-primary {
+    width: 100%;
+    background: #e53e3e;
+    color: white;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #c53030;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 62, 62, 0.6);
+}
+
+/* Auth Cards Style (Signin & Signup) */
+.auth-body {
+    background: #121824;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    background: #1a2234;
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid #2d3748;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    
+}
+
+.auth-card h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    background: #121824;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    color: white;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #e53e3e;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin: 1.2rem 0;
+    color: #94a3b8;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+.forgot-link, .highlight-link {
+    color: #e53e3e;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.forgot-link:hover, .highlight-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.auth-footer-text {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Footer Effect */
+.footer {
+    background: #121824;
+    text-align: center;
+    padding: 3rem;
+    color: #94a3b8;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Alerts */
+.alert {
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1.2rem;
+    font-size: 0.85rem;
+}
+
+.alert.error {
+    background: rgba(229, 62, 62, 0.15);
+    color: #fc8181;
+    border: 1px solid rgba(229, 62, 62, 0.3);
+}
+
+.alert.success {
+    background: rgba(72, 187, 120, 0.15);
+    color: #68d391;
+    border: 1px solid rgba(72, 187, 120, 0.3);
+}
+
